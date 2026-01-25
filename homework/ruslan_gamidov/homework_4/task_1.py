@@ -8,7 +8,7 @@ my_dict = {
 print(my_dict['tuple'][-1])
 my_dict['list'].append(['Lenya', 2])
 my_dict['list'].pop(1)
-my_dict['dict']['i am a tuple'] = 'tuple not i am'
+my_dict['dict'][('i am a tuple',)] = 'tuple not i am'
 my_dict['dict'].pop('two')
 my_dict['set'].add(-1)
 my_dict['set'].pop()
