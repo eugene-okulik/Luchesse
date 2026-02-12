@@ -6,6 +6,7 @@ def fibo():
         yield x, i
         x, y = y, x + y
 
+
 data = [5, 200, 1000, 100000]
 index = 0
 
