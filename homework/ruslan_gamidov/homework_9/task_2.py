@@ -10,3 +10,5 @@ hot_list = list(filter(hot, temperatures))
 
 print(hot_list)
 print(min(hot_list))
+print(max(hot_list))
+print(round(sum(hot_list) / len(hot_list), 2))
