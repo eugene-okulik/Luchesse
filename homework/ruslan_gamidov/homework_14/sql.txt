@@ -1,0 +1,28 @@
+INSERT INTO students (name, second_name) VALUES ('Ruslan', 'Gamidov')
+INSERT INTO books (title, taken_by_student_id) VALUES ('Изучаем Python', 22525)
+INSERT INTO books (title, taken_by_student_id) VALUES ('Being a Playwright', 22525)
+INSERT INTO `groups`  (title, start_date, end_date) VALUES ('Automation QA', 'jan 2026', 'jun 2026')
+UPDATE students SET group_id = 22524 WHERE id = 22525
+INSERT INTO subjects (title) VALUES ('Biohacking')
+INSERT INTO subjects (title) VALUES ('QAtoAQA')
+INSERT INTO lessons (title, subject_id) VALUES ('lesson bio', 22527)
+INSERT INTO lessons (title, subject_id) VALUES ('lesson hacking', 22527)
+INSERT INTO lessons (title, subject_id) VALUES ('lesson QA', 22526)
+INSERT INTO lessons (title, subject_id) VALUES ('lesson AQA', 22526)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (10, 75645, 22525)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (9, 75646, 22525)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (8, 75647, 22525)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (7, 75648, 22525)
+
+
+SELECT value FROM marks WHERE student_id = 22525
+SELECT title FROM books WHERE taken_by_student_id = 22525
+
+SELECT g.title as 'Группа', b.title as 'Книга', m.value as 'Оценка', l.title as 'Занятие', s2.title as 'Предмет'
+FROM students s
+JOIN `groups` g ON s.group_id = g.id
+JOIN  books b  ON s.id = b.taken_by_student_id
+JOIN marks m ON s.id = m.student_id
+JOIN lessons l ON m.lesson_id = l.id
+JOIN subjects s2 ON s2.id = l.subject_id
+WHERE s.id = 22525
