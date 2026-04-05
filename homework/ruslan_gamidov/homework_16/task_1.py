@@ -18,7 +18,7 @@ db = mysql.connect(
 cursor = db.cursor(dictionary=True)
 
 missing = []
-with open(csv_path, newline='', encoding='utf-8') as csv_file:
+with open(csv_path, newline='') as csv_file:
     reader = csv.DictReader(csv_file)
     for row in reader:
         query = """
