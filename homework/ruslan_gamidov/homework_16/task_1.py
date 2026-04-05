@@ -41,7 +41,7 @@ with open(csv_path, newline='', encoding='utf-8') as csv_file:
             row['book_title'], row['subject_title'], row['lesson_title'],
             row['mark_value']
         ])
-        if len(cursor.fetchall()) == 0:
+        if not cursor.fetchall():
             missing.append(f"{row['name']} {row['second_name']}")
 
 if missing:
