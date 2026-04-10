@@ -40,12 +40,12 @@ def main():
                 words = block_text.split()
                 try:
                     idx = words.index(args.text)
-                    start_idx = max(0, idx-5)
-                    end_idx = min(len(words), idx+6)
+                    start_idx = max(0, idx - 5)
+                    end_idx = min(len(words), idx + 6)
                     context = ' '.join(words[start_idx:end_idx])
                 except ValueError:
                     pos = block_text.find(args.text)
-                    start_pos = max(0, pos-30)
+                    start_pos = max(0, pos - 30)
                     end_pos = pos + len(args.text) + 30
                     context = block_text[start_pos:end_pos]
                 print(f"Файл: {filename}, строка начала блока: {start_line}, время: {time} \n"
